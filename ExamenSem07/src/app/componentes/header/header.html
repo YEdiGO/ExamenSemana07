@@ -1,1 +1,37 @@
-<p>header works!</p>
+<header>
+  <!-- Menú de navegación fijo arriba -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-idiomas fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">Global Languages</a>
+
+      <!-- Botón hamburguesa: solo se ve en pantallas pequeñas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#idiomas">Idiomas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#niveles">Niveles</a></li>
+          <li class="nav-item"><a class="nav-link" href="#docentes">Docentes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#horarios">Horarios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portada -->
+  <section id="inicio" class="hero text-white text-center d-flex align-items-center">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold mb-3">Aprende un idioma, abre tu mundo</h1>
+      <p class="lead mb-4">
+        Clases con docentes expertos, en horarios flexibles y para todos los niveles.
+      </p>
+      <a href="#idiomas" class="btn btn-light btn-lg me-2">Ver idiomas</a>
+      <a href="#promociones" class="btn btn-outline-light btn-lg">Ver promociones</a>
+    </div>
+  </section>
+</header>
