@@ -1,1 +1,208 @@
-<p>main works!</p>
+<main>
+  <!-- ===== IDIOMAS Y PROGRAMAS ===== -->
+  <section id="idiomas" class="py-5">
+    <div class="container">
+      <h2 class="text-center text-idiomas fw-bold mb-4">Idiomas disponibles</h2>
+
+      <!-- 1 columna en celular, 2 en tablet, 3 en computadora -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        @for (i of idiomas; track i.nombre) {
+          <div class="col">
+            <div class="card h-100 shadow-sm text-center">
+              <div class="card-body">
+                <div class="display-4 mb-3">{{ i.bandera }}</div>
+                <h5 class="card-title">{{ i.nombre }}</h5>
+                <p class="card-text">{{ i.descripcion }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <h3 class="text-center mb-4">Programas de estudio</h3>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+        @for (p of programas; track p.nombre) {
+          <div class="col">
+            <div class="card h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title text-idiomas">{{ p.nombre }}</h5>
+                <p class="card-text mb-0">{{ p.detalle }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NIVELES Y MODALIDAD ===== -->
+  <section id="niveles" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-idiomas fw-bold mb-4">Niveles de aprendizaje</h2>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        @for (n of niveles; track n.codigo) {
+          <div class="col">
+            <div class="card h-100 shadow-sm text-center">
+              <div class="card-body">
+                <span class="badge bg-idiomas fs-5 mb-3">{{ n.codigo }}</span>
+                <h5 class="card-title">{{ n.nombre }}</h5>
+                <p class="card-text">{{ n.descripcion }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <h3 class="text-center mb-4">Modalidad de enseñanza</h3>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        @for (m of modalidades; track m.nombre) {
+          <div class="col">
+            <div class="d-flex align-items-center bg-white rounded shadow-sm p-3 h-100">
+              <div class="fs-1 me-3">{{ m.icono }}</div>
+              <div>
+                <h5 class="mb-1">{{ m.nombre }}</h5>
+                <p class="mb-0 text-muted">{{ m.detalle }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOCENTES ===== -->
+  <section id="docentes" class="py-5">
+    <div class="container">
+      <h2 class="text-center text-idiomas fw-bold mb-4">Nuestros docentes</h2>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+        @for (d of docentes; track d.nombre) {
+          <div class="col">
+            <div class="card h-100 shadow-sm text-center">
+              <div class="card-body">
+                <div class="avatar mx-auto mb-3">{{ d.iniciales }}</div>
+                <h5 class="card-title">{{ d.nombre }}</h5>
+                <span class="badge bg-idiomas mb-2">{{ d.especialidad }}</span>
+                <p class="card-text text-muted">{{ d.detalle }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HORARIOS ===== -->
+  <section id="horarios" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-idiomas fw-bold mb-4">Horarios</h2>
+
+      <!-- table-responsive: la tabla se desliza de lado en celulares -->
+      <div class="table-responsive">
+        <table class="table table-striped table-hover bg-white">
+          <thead class="table-dark">
+            <tr>
+              <th>Turno</th>
+              <th>Días</th>
+              <th>Horario</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (h of horarios; track h.turno) {
+              <tr>
+                <td class="fw-bold">{{ h.turno }}</td>
+                <td>{{ h.dias }}</td>
+                <td>{{ h.hora }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROMOCIONES ===== -->
+  <section id="promociones" class="py-5">
+    <div class="container">
+      <h2 class="text-center text-idiomas fw-bold mb-4">Promociones vigentes</h2>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        @for (p of promociones; track p.titulo) {
+          <div class="col">
+            <div class="card h-100 border-success shadow-sm text-center">
+              <div class="card-body">
+                <span class="badge bg-success fs-5 mb-3">{{ p.descuento }}</span>
+                <h5 class="card-title">{{ p.titulo }}</h5>
+                <p class="card-text text-muted">{{ p.vigencia }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIOS ===== -->
+  <section id="testimonios" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-idiomas fw-bold mb-4">Lo que dicen nuestros estudiantes</h2>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        @for (t of testimonios; track t.estudiante) {
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <p class="text-warning fs-4 mb-2">{{ t.estrellas }}</p>
+                <p class="card-text">"{{ t.comentario }}"</p>
+                <p class="fw-bold mb-0">— {{ t.estudiante }}</p>
+                <small class="text-muted">Estudiante de {{ t.idioma }}</small>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOSOTROS: HISTORIA, MISIÓN Y VISIÓN ===== -->
+  <section id="nosotros" class="py-5">
+    <div class="container">
+      <h2 class="text-center text-idiomas fw-bold mb-4">Sobre nosotros</h2>
+
+      <div class="mb-4">
+        <h4>Nuestra historia</h4>
+        <p>
+          Global Languages nació hace más de 15 años con un aula y un grupo de docentes apasionados
+          por los idiomas. Hoy somos un centro reconocido que ha formado a miles de estudiantes que
+          usan un segundo idioma en sus estudios y en su trabajo.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <div class="card h-100 bg-idiomas text-white">
+            <div class="card-body">
+              <h4 class="card-title">Misión</h4>
+              <p class="card-text mb-0">
+                Brindar una enseñanza de idiomas de calidad, práctica y accesible, que conecte a
+                nuestros estudiantes con nuevas oportunidades.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card h-100 border-primary">
+            <div class="card-body">
+              <h4 class="card-title text-idiomas">Visión</h4>
+              <p class="card-text mb-0">
+                Ser el centro de idiomas líder de la región por su excelencia académica, innovación
+                y compromiso con el aprendizaje.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
