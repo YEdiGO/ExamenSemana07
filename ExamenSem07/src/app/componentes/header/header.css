@@ -1,5 +1,12 @@
+
 .hero {
-  min-height: 80vh;
-  padding-top: 56px; 
-  background: linear-gradient(135deg, #3949ab, #7e57c2);
+  /* Imagen de fondo con una capa oscura (overlay) para resaltar el texto */
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+              url('https://heyjaime.com/wp-content/uploads/2024/09/Duolingo-diseno-grafico_Cabecera.webp') no-repeat center center;
+  
+  /* Ajusta la imagen para cubrir toda la sección sin deformarse */
+  background-size: cover;
+  
+  /* Altura mínima para asegurar espacio adecuado en pantalla */
+  min-height: 80vh; 
 }
